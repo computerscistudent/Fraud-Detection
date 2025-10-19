@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Results</title>
+    <!-- <link rel="stylesheet" href="/static/style.css"> -->
+    <style>
+    /* Full-page gradient fix */
+    html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+        background-attachment: fixed;
+        color: white;
+        font-family: 'Segoe UI', sans-serif;
+        text-align: center;
+    }
+
+    h2 {
+        font-size: 28px;
+        margin-top: 30px;
+        color: #f1f5f9;
+        text-shadow: 0 0 8px rgba(255,255,255,0.3);
+    }
+
+    .summary {
+        margin-bottom: 20px;
+        font-size: 18px;
+        color: #d1d5db;
+    }
+
+    /* Table styling */
+    .styled-table {
+        border-collapse: collapse;
+        margin: 25px auto;
+        width: 95%;
+        font-size: 0.9em;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+        background-color: rgba(255,255,255,0.08); /* transparent to show gradient */
+        color: #e2e8f0;
+        backdrop-filter: blur(8px);
+    }
+
+    .styled-table thead tr {
+        background: rgba(255,255,255,0.15);
+        color: #f1f5f9;
+    }
+
+    .styled-table th, .styled-table td {
+        padding: 12px 15px;
+        border: 1px solid rgba(255,255,255,0.2);
+    }
+
+    .styled-table tbody tr:nth-of-type(even) {
+        background-color: rgba(255,255,255,0.07);
+    }
+
+    .styled-table tbody tr:nth-of-type(odd) {
+        background-color: rgba(255,255,255,0.05);
+    }
+
+    .styled-table tbody tr:hover {
+        background-color: rgba(255,255,255,0.2);
+        transition: background-color 0.3s ease;
+    }
+
+    /* Button styling */
+    a {
+        display: inline-block;
+        margin-top: 20px;
+        text-decoration: none;
+        background: linear-gradient(90deg, #11998e, #38ef7d);
+        color: white;
+        padding: 10px 20px;
+        border-radius: 8px;
+        font-weight: bold;
+        transition: transform 0.2s ease, box-shadow 0.3s ease;
+    }
+
+    a:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 12px rgba(56, 239, 125, 0.8);
+    }
+</style>
+
+
+
+
+</head>
+<body>
+    <div class="container">
+        <h2>📊 Prediction Summary</h2>
+        <p><b>Total Transactions:</b> {{ total }}</p>
+        <p><b>Potential Frauds:</b> {{ fraud_count }}</p>
+
+        {% if table %}
+            <div class="table-container">{{ table | safe }}</div>
+        {% elif error %}
+            <p style="color:red;">Error: {{ error }}</p>
+        {% endif %}
+
+        <a class="back-btn" href="/index">⬅️ Upload Another File</a>
+        <a class="docs-btn" href="/docs_redirect" target="_blank">🔗 API Docs</a>
+    </div>
+</body>
+</html>

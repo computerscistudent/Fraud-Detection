@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Churn Prediction</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            color: #fff;
+            text-align: center;
+            padding: 40px;
+        }
+        .card {
+            background: #fff;
+            color: #333;
+            padding: 30px;
+            border-radius: 12px;
+            max-width: 800px;
+            margin: auto;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+        h1 { color: #333; }
+        h2 { color: #2c5364; }
+        ul li { margin: 6px 0; }
+        .btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 18px;
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .btn:hover { background: linear-gradient(135deg, #0d191e, #396d7e, #2c5364); }
+
+        @media screen and (max-width: 480px) {
+            body {
+                padding: 20px;
+            }
+            form {
+                width: 90%;
+                padding: 20px;
+            }
+            .card, .result {
+                width: 95%;
+                padding: 20px;
+            }
+            h1 {
+                font-size: 24px;
+            }
+            h2 {
+                font-size: 18px;
+            }
+            p {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>💳 My Credit Card Fraud Detection Model</h1>
+        <h2>Key Highlights</h2>
+        <p><b>Data Processing & EDA:</b> Thorough analysis of customer churn behavior.</p>
+        <p><b>Baseline Model:</b> Built Logistic Regression achieving ROC AUC ≈ 0.96, establishing a strong benchmark.</p>
+        <p><b>Advanced Models:</b> Applied SMOTE balancing and trained Random Forest & XGBoost, improving ROC AUC to ≈ 0.98+.</p>
+        <p><b>Explainability:</b> Used SHAP to identify top risk-driving features influencing fraud predictions.</p>
+        <p><b>Deployment:</b> Deployed via FastAPI with a dual interface:</p>
+        <ul>
+            <li><b>/docs</b> → Developer API (Swagger UI for testing endpoints)</li>
+            <li><b>/file</b> → User-friendly web app for CSV uploads and fraud probability visualization</li>
+        </ul>
+        <h2>Impact 🚀</h2>
+        <p>Detects fraudulent transactions with high precision and recall,
+            empowers businesses to prevent financial losses,</p>
+    </div>
+
+    <p>
+        <a class="btn" href="/index">🔗⬅️ Upload CSV File </a>
+    </p>
+</body>
+</html>

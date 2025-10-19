@@ -1,0 +1,77 @@
+# ==========================================
+# 🐍 Python / FastAPI ML Project .gitignore
+# ==========================================
+
+# --- Python cache ---
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*$py.class
+
+# --- Virtual environment ---
+.venv/
+venv/
+env/
+ENV/
+.conda/
+*.env
+*.venv
+
+# --- Logs & temporary files ---
+logs/
+*.log
+*.tmp
+*.bak
+*.swp
+
+# --- IDE / Editor folders ---
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# --- Data directories ---
+data/raw/
+data/processed/
+!data/processed/.keep   # keep empty folder structure
+!data/raw/.keep
+
+# --- Model artifacts ---
+artifacts/
+!artifacts/xgboost_model.joblib
+!artifacts/randomforest_model.joblib
+!artifacts/shap_summary.png
+models/
+*.pkl
+*.h5
+*.bin
+
+# --- Notebooks checkpoints ---
+.ipynb_checkpoints/
+notebooks/.ipynb_checkpoints/
+
+# --- OS files ---
+.DS_Store
+Thumbs.db
+
+# --- Test reports / coverage ---
+htmlcov/
+.tox/
+.nox/
+.coverage
+*.cover
+coverage.xml
+*.pytest_cache/
+
+# --- FastAPI static & build files ---
+__pycache__/
+staticfiles/
+build/
+dist/
+
+# --- Render / Deployment cache ---
+*.tar.gz
+*.zip
+*.egg-info/
+MANIFEST

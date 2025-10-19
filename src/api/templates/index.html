@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fraud Detection</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>💳 Credit Card Fraud Detector</h1>
+        <p>Upload your transaction CSV and check for potential frauds instantly.</p>
+
+        <form action="submit" method="post" enctype="multipart/form-data">
+            <input type="file" name="file" accept=".csv" required>
+            <button type="submit">Predict</button>
+        </form>
+    </div>
+</body>
+</html>
