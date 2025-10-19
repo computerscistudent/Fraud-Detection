@@ -1,5 +1,5 @@
 # ==========================================
-# 🐍 Python / FastAPI ML Project .gitignore
+# 🐍 Fraud Detection (FastAPI + ML) Project
 # ==========================================
 
 # --- Python cache ---
@@ -9,7 +9,7 @@ __pycache__/
 *.pyd
 *$py.class
 
-# --- Virtual environment ---
+# --- Virtual environments ---
 .venv/
 venv/
 env/
@@ -18,59 +18,62 @@ ENV/
 *.env
 *.venv
 
-# --- Logs & temporary files ---
+# --- Logs & temp files ---
 logs/
 *.log
 *.tmp
 *.bak
 *.swp
 
-# --- IDE / Editor folders ---
+# --- IDE / Editor configs ---
 .vscode/
 .idea/
 *.sublime-project
 *.sublime-workspace
 
 # --- Data directories ---
-data/raw/
-data/processed/
-!data/processed/.keep   # keep empty folder structure
+# Ignore large or sensitive data, but keep folder structure
+data/raw/*
+data/processed/*
 !data/raw/.keep
+!data/processed/.keep
 
 # --- Model artifacts ---
-artifacts/
+# Ignore all, but keep final deployed models and SHAP visualization
+artifacts/*
 !artifacts/xgboost_model.joblib
 !artifacts/randomforest_model.joblib
 !artifacts/shap_summary.png
-models/
+
+# --- Notebooks ---
+# Keep your EDA notebook, ignore auto checkpoints
+notebooks/.ipynb_checkpoints/
+.ipynb_checkpoints/
+
+# --- Compiled models & serialized files ---
 *.pkl
 *.h5
 *.bin
+*.joblib
 
-# --- Notebooks checkpoints ---
-.ipynb_checkpoints/
-notebooks/.ipynb_checkpoints/
-
-# --- OS files ---
+# --- OS / Misc ---
 .DS_Store
 Thumbs.db
 
-# --- Test reports / coverage ---
+# --- Testing / Coverage ---
 htmlcov/
 .tox/
 .nox/
 .coverage
 *.cover
 coverage.xml
-*.pytest_cache/
+.pytest_cache/
 
-# --- FastAPI static & build files ---
+# --- Build / Deployment cache ---
 __pycache__/
 staticfiles/
 build/
 dist/
-
-# --- Render / Deployment cache ---
 *.tar.gz
 *.zip
 *.egg-info/
